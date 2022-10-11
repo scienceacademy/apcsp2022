@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <cs50.h>
 
+void shuffle();
+
 typedef struct
 {
     int suit;
@@ -27,4 +29,9 @@ int main(void)
         }
     }
     printf("%s of %s\n", ranks[deck[0].rank], suits[deck[0].suit]);
+}
+
+void shuffle()
+{
+    // TODO
 }
