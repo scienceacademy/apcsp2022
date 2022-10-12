@@ -14,18 +14,8 @@ int main(int argc, string argv[])
         printf("Usage: ./shuffle <seed>\n");
         return 1;
     }
-    int seed = atoi(argv[1]);
-
-    // if arg is 0, randomize with time
-    if (seed == 0)
-    {
-        srand(time(0));
-    }
-    // else use the given seed
-    else
-    {
-        srand(seed);
-    }
+    // TODO: seed the rng using the given seed
+    // if the given seed is 0, use time(0)
 
     shuffle();
 
