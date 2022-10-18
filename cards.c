@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <cs50.h>
+#include <stdlib.h>
+#include <time.h>
 
 void shuffle();
 
@@ -18,6 +20,7 @@ string suits[] = {"♥", "♣", "♠", "♦"};
 
 int main(void)
 {
+    srand(time(0));
     int n = 0;
     for (int s = 0; s < 4; s++)
     {
@@ -28,10 +31,20 @@ int main(void)
             n++;
         }
     }
+    shuffle();
+
     printf("%s of %s\n", ranks[deck[0].rank], suits[deck[0].suit]);
 }
 
 void shuffle()
 {
-    // TODO
+    int j;
+    card tmp;
+    for (int i = 51; i > 0; i--)
+    {
+        j = rand() % (i + 1);
+        tmp = deck[j];
+        deck[j] = deck[i];
+        deck[i] = tmp;
+    }
 }
