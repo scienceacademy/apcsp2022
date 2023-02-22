@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h1>Tasks</h1>
+<ul>
+    {% for task in tasks %}
+        <li>{{ task }} <a href="/del?id={{loop.index0}}">x</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
