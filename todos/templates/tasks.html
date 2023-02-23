@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h1>Tasks</h1>
+<ul>
+    {% for task in tasks %}
+        <li>{{ task }} <a href="/del?id={{loop.index0}}">x</a></li>
+    {% endfor %}
+</ul>
+<a href="/add">Add a task</a>
+<a href="/logout">Logout</a>
+{% endblock %}
