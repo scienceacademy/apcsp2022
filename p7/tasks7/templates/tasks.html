@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1>My Tasks</h1>
+    <ul>
+        {% for task in tasks: %}
+            <li>{{ task }} <a href="/del?id={{loop.index0}}">x</a></li>
+        {% endfor %}
+    </ul>
+    <form action="/" method="post">
+        <input type="text" name="task">
+        <input type="submit">
+    </form>
+{% endblock %}
